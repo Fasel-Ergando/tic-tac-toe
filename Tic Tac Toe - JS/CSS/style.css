@@ -1,0 +1,148 @@
+/* RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+
+/* UTILITY CLASSES */
+.gameCell.checkCell {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.animate {
+  animation: popup 300ms;
+}
+
+.green {
+  color: green;
+}
+
+/* GENERAL STYLES */ 
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, rgb(79, 245, 79), lightgreen);
+}
+
+.gameHeader {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.inputCells {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+.inputCells .gameCell {
+  border: 1px solid;
+  width: 70px;
+  height: 70px;
+  font-size: 38px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+}
+
+.gameCell:nth-child(1) {
+  border-top: none;
+  border-left: none;
+}
+.gameCell:nth-child(2) {
+  border-top: none;
+}
+.gameCell:nth-child(3) {
+  border-top: none;
+  border-right: none;
+}
+.gameCell:nth-child(4) {
+  border-left: none;
+}
+.gameCell:nth-child(6) {
+  border-right: none;
+}
+.gameCell:nth-child(7) {
+  border-left: none;
+  border-bottom: none;
+}
+.gameCell:nth-child(8) {
+  border-bottom: none;
+}
+.gameCell:nth-child(9) {
+  border-right: none;
+  border-bottom: none;
+}
+
+.resetGame {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.resetGame button {
+  font-size: 16px;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #121212;
+  color: white;
+}
+
+.displayScore {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.playerScores {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: white;
+  padding: 20px 40px;
+  border-radius: 5px;
+  animation-fill-mode: forwards;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes popup {
+  100% { transform: translate(-50%, -50%) scale(1);}
+}
+
+.closeBoard {
+  text-align: right;
+  cursor: pointer;
+}
+
+.playerScores > h1 {
+  font-size: 45px;
+}
+
+.players {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+}
+
+.playerName {
+  border-bottom: 2.5px solid;
+  padding-inline: 30px;
+  margin-bottom: 20px;
+}
+
+.players .score {
+   text-align: center;
+}
+
+.isWinning {
+  text-align: center;
+  font-size: 18px;
+  color: green;
+}
